@@ -18,3 +18,17 @@ GREY = (128, 128, 128)
 
 
 
+class Spot:
+    def __init__(self, row, col, width, total_rows):
+        self.row = row 
+        self.col = col
+        self.x = col * width
+        self.y = row * width
+        self.color = WHITE
+        self.width = width
+        self.total_rows = total_rows
+
+    def draw(self, win):
+        pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.width))
+
+
