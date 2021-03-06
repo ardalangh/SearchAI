@@ -41,10 +41,11 @@ def make_grid(rows, width):
         grid.append([])
         for j in range(rows):
             sp = Spot(i, j, gap, rows)
-            grid[i].append(spot)
+            grid[i].append(sp)
     
     grid[0][0].color = BLACK
     # to be cont
+    return grid
 
 
 def draw_grid(win, rows, width):
@@ -63,7 +64,7 @@ def draw(win, grid, rows, width):
 
     for row in grid:
         for spot in row:
-            spot.darw(win)
+            spot.draw(win)
 
     draw_grid(win, rows, width)
     pygame.display.update()
@@ -83,4 +84,6 @@ def main(win, width):
         draw(win, grid, ROWS, width)
 
 
+
+main(WIN, WIDTH)
 
