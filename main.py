@@ -44,4 +44,29 @@ def make_grid(rows, width):
             grid[i].append(spot)
     
     grid[0][0].color = BLACK
+    # to be cont
+
+
+def draw_grid(win, rows, width):
+    gap = width // rows
+    for i in range(rows):
+        pygame.draw.line(win, GREY, (0, i * gap), (width, i * gap))
+        for j in range(rows):
+            pygame.draw.line(win, GREY, (j * gap, 0), (j * gap, width))
+
+
+
+
+def main(win, width):
+    ROWS = 50 
+    grid = make_grid(ROWS, width)
+
+
+    run = True
+    found = False
+
+
+    while run:
+
+
 
