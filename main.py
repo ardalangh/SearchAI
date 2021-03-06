@@ -32,3 +32,16 @@ class Spot:
         pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.width))
 
 
+
+def make_grid(rows, width):
+    grid = []
+    gap = width // rows
+
+    for i in range(rows):
+        grid.append([])
+        for j in range(rows):
+            sp = Spot(i, j, gap, rows)
+            grid[i].append(spot)
+    
+    grid[0][0].color = BLACK
+
