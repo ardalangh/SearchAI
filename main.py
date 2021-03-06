@@ -57,6 +57,19 @@ def draw_grid(win, rows, width):
 
 
 
+
+def draw(win, grid, rows, width):
+    win.fill(WHITE)
+
+    for row in grid:
+        for spot in row:
+            spot.darw(win)
+
+    draw_grid(win, rows, width)
+    pygame.display.update()
+
+
+
 def main(win, width):
     ROWS = 50 
     grid = make_grid(ROWS, width)
@@ -67,6 +80,7 @@ def main(win, width):
 
 
     while run:
+        draw(win, grid, ROWS, width)
 
 
 
